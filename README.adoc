@@ -1,0 +1,7 @@
+= Latex Experiments
+
+This repo contains experiments with LaTeX.
+
+Most of these are geared towards creating slides, exercises, exams etc. for
+programming courses.
+The code developed here may be used in various projects.
