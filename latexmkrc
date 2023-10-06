@@ -17,11 +17,12 @@ sub addsrcfiles {
 $emulate_aux = 1;
 $out_dir = "$builddir";
 $aux_dir = "$auxdir";
-$pdflatex = 'pdflatex -synctex=1 -interaction=nonstopmode';
+#$pdflatex = 'pdflatex -synctex=1 -interaction=nonstopmode';
+$pdflatex = 'lualatex -interaction=nonstopmode';
 $pdf_mode = 1;
 $do_cd = 1;
 $clean_ext = 'snm nav synctex.gz';
 
-addsrcfiles("$srcdir/misc",
-    "hello.tex",
+addsrcfiles("$srcdir/listings",
+    "listings.tex",
 );
