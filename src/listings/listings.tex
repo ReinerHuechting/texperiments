@@ -1,9 +1,29 @@
 \documentclass{scrartcl}
 
+\input{../defs/listingdefs.tex}
+
 \begin{document}
   \title{Listing Experiments}
 
   \maketitle
   
   This is a document containing experiments with listings in \LaTeX.
+
+  \section{Basic Listings}
+
+  \subsection{Using the \texttt{lstlisting} environment}
+
+    \begin{lstlisting}[style=numbers]
+def greet(name):
+    print("Hello " + name + "!")
+    \end{lstlisting}
+
+  \subsection{Using \texttt{\textbackslash lstinputlisting}}
+    \lstset{inputpath=code}
+    
+    \lstinputlisting[
+        style=numbers,
+        caption={The sieve of Eratosthenes in Python.},
+        label={lst:basic}
+    ]{sieve.py}
 \end{document}

@@ -1,0 +1,25 @@
+\usepackage{listings}
+\usepackage[dvipsnames]{xcolor}
+
+\lstdefinestyle{common}{
+    language=Python,
+    basicstyle=\ttfamily,
+    keywordstyle=\color{blue},
+    commentstyle=\color{ForestGreen},
+    stringstyle=\color{BrickRed},
+    showstringspaces=true,
+    backgroundcolor=\color{YellowOrange!10},
+}
+
+\lstdefinestyle{numbers}{
+    style=common,
+    numbers=left,
+    stepnumber=1,
+    numberstyle=\tiny,
+    numbersep=10pt
+}
+
+\lstdefinestyle{nonumbers}{
+    style=common,
+    numbers=none
+}
