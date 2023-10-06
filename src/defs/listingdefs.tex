@@ -23,3 +23,9 @@
     style=common,
     numbers=none
 }
+
+\NewDocumentCommand{\code}{ m }{
+    \hspace{-.5em}
+    \lstinline[style=nonumbers]|#1|
+    \hspace{-.5em}
+}
