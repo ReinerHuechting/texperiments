@@ -1,14 +1,20 @@
 \usepackage{listings}
 \usepackage[dvipsnames]{xcolor}
 
+\colorlet{listingbg}{Goldenrod!10}
+
 \lstdefinestyle{common}{
     language=Python,
     basicstyle=\ttfamily,
     keywordstyle=\color{blue},
-    commentstyle=\color{ForestGreen},
+    commentstyle=\color{OliveGreen},
     stringstyle=\color{BrickRed},
     showstringspaces=true,
-    backgroundcolor=\color{YellowOrange!10},
+}
+
+\lstdefinestyle{colored}{
+    style=common,
+    backgroundcolor=\color{listingbg},
 }
 
 \lstdefinestyle{numbers}{
