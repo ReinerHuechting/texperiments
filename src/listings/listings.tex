@@ -13,7 +13,10 @@
 
   \subsection{Using the \code{lstlisting} environment}
 
-    \begin{lstlisting}[style=numbers]
+    \begin{lstlisting}[
+        style=nonumbers,
+        style=colored,
+    ]
 def greet(name):
     print("Hello " + name + "!")
     \end{lstlisting}
@@ -23,7 +26,25 @@ def greet(name):
     
     \lstinputlisting[
         style=numbers,
+        style=colored,
         caption={The sieve of Eratosthenes in Python.},
         label={lst:basic}
     ]{sieve.py}
+
+  \subsection{Using the \texttt{tcolorbox} package}
+  \lstset{inputpath=.}
+
+    \begin{tcblisting}{
+        nonumbers,
+        listing options={style=nonumbers},
+        colback=listingbg,
+    }
+def multiply(a, b):
+    return a * b
+    \end{tcblisting}
+
+  \subsection{Using the \texttt{tcolorbox} package reading from a file}
+
+    \inputsrcfile{code/sieve.py}
+
 \end{document}

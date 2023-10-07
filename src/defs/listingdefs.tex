@@ -1,5 +1,8 @@
-\usepackage{listings}
+\usepackage{listingsutf8}
 \usepackage[dvipsnames]{xcolor}
+\usepackage{tcolorbox}
+\tcbuselibrary{listings}
+\tcbuselibrary{skins}
 
 \colorlet{listingbg}{Goldenrod!10}
 
@@ -28,6 +31,50 @@
 \lstdefinestyle{nonumbers}{
     style=common,
     numbers=none
+}
+
+\tcbset{listingboxcommon/.style={%
+    enhanced,
+    boxrule=0.2pt,
+    frame style={draw=black!10},
+    colback=listingbg,
+    coltitle=black!80,
+    colbacktitle=black!10,
+    fonttitle=\bfseries,
+    listing only,
+    listing options={
+        style=common,
+    },
+}}
+
+\tcbset{numbers/.style={%
+    listingboxcommon,
+    listing options={
+        style=numbers,
+        xleftmargin=1em,
+    },
+}}
+
+\tcbset{nonumbers/.style={%
+    listingboxcommon,
+    listing options={
+        style=nonumbers,
+    },
+}}
+
+\NewTCBInputListing{\inputsrcfile}{ O{} D||{} m !O{0-1000} }{%
+    % #1: tcolorbox options
+    % #2: listing options
+    % #3: file name
+    % #4: line range
+    listing file=#3,
+    listing options={
+        style=common,
+        linerange={#4},
+        #2,
+    },
+    numbers,
+    #1,
 }
 
 \NewDocumentCommand{\code}{ m }{
