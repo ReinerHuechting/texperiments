@@ -1,0 +1,16 @@
+\section{Using the \texttt{tcolorbox} package}
+\subsection{Using \texttt{tcblisting} environment}
+\lstset{inputpath=.}
+
+\begin{tcblisting}{
+    nonumbers,
+    listing options={style=nonumbers},
+    colback=listingbg,
+}
+def multiply(a, b):
+    return a * b
+\end{tcblisting}
+
+\subsection{Using the \texttt{tcolorbox} package reading from a file}
+
+\inputsrcfile{code/sieve.py}
