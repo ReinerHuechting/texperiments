@@ -26,3 +26,6 @@ $clean_ext = 'snm nav synctex.gz';
 addsrcfiles("$srcdir/listings",
     "listings.tex",
 );
+addsrcfiles("$srcdir/datatypes",
+    "datatypes.tex",
+);
