@@ -1,31 +1,18 @@
-use Cwd;
-my $rootdir = getcwd;
-my $srcdir = "$rootdir/src";
-my $builddir = "$rootdir/build";
-my $auxdir = "$rootdir/aux";
-@default_files = ();
-sub addsrcfiles {
-    my ($dirname, @filenames) = @_;
-    for $filename (@filenames) {
-        @default_files = (
-            @default_files,
-            "$dirname/$filename"
-        );
-    }
-}
+# include build settings and scripts
+do './buildscripts.pl';
 
-$emulate_aux = 1;
-$out_dir = "$builddir";
-$aux_dir = "$auxdir";
-#$pdflatex = 'pdflatex -synctex=1 -interaction=nonstopmode';
-$pdflatex = 'lualatex -interaction=nonstopmode';
-$pdf_mode = 1;
-$do_cd = 1;
-$clean_ext = 'snm nav synctex.gz';
+############################################
+# Override the default settings if needed. #
+# (cf. buildscripts.pl)                    #
+############################################
+# $srcdir = "$rootdir/src";
+# $examplesdir = "$rootdir/examples";
+# $builddir = "$rootdir/build"; # where to put the pdf files created.
+# $buildoptions = "-interaction=nonstopmode";
 
-addsrcfiles("$srcdir/listings",
-    "listings.tex",
-);
-addsrcfiles("$srcdir/datatypes",
-    "datatypes.tex",
-);
+###################################
+# Add files to the build process. #
+###################################
+
+add_directory("$srcdir/listings");
+add_directory("$srcdir/datatypes");
